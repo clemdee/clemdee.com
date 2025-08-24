@@ -1,0 +1,55 @@
+
+
+@layer reset {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer base {
+  html {
+    height: 100dvh;
+    max-height: 100dvh;
+    width: 100dvw;
+    max-width: 100dvw;
+  }
+
+  body {
+    min-height: 100%;
+    width: 100%;
+    font-family: arial;
+    color: #eee;
+    background-color: #111;
+  }
+}
+
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+section {
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  max-width: 100dvw;
+  font-size: min(4rem, 10dvw);
+  font-family: monospace;
+}
+
+h2 {
+  max-width: 100dvw;
+  font-size: min(2rem, 10dvw);
+  font-family: monospace;
+}
+
+
+
