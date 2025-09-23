@@ -1,4 +1,13 @@
 
+@keyframes slide-in {
+  from {
+    translate: var(--animation-dx, 0rem) var(--animation-dy, 0rem);
+    opacity: var(--animation-opacity, 0);
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
 
 @layer reset {
   *,
@@ -22,8 +31,27 @@
     min-height: 100%;
     width: 100%;
     font-family: arial;
+    font-size: 1.3rem;
     color: #eee;
     background-color: #111;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+
+    &:is(:hover,:focus,:active) {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    &::before {
+      content: '› ';
+    }
+
+    &::after {
+      content: ' ‹';
+    }
   }
 }
 
@@ -31,11 +59,13 @@
 body {
   display: grid;
   place-items: center;
+  text-align: center;
 }
 
 section {
   display: grid;
   place-items: center;
+  gap: 6rem;
 }
 
 h1 {
@@ -51,5 +81,8 @@ h2 {
   font-family: monospace;
 }
 
-
+.websites {
+  --animation-dy: -3rem;
+  animation: slide-in 1.4s 600ms ease-out both;
+}
 
